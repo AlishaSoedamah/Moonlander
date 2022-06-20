@@ -37,14 +37,6 @@ player_crash = pygame.image.load('crash.bmp').convert()
 background = pygame.image.load('space.bmp').convert()
 landings_ground = pygame.image.load('landing.bmp').convert()
 
-print("Speed")
-
-# if you want to use this module.
-my_font = pygame.font.SysFont('Sans-serif', 30)
-text_surface = my_font.render('Some Text', True, (0, 0, 0))
-screen.blit(text_surface, (0, 0))
-
-
 # colorkey = white = transparent bg
 player_on.set_colorkey(WHITE)
 player_off.set_colorkey(WHITE)
@@ -56,6 +48,7 @@ screen.blit(background, [0, 0])
 
 # draw landings ground
 screen.blit(landings_ground, [0, 0])
+
 # draw user sprite (lander)
 screen.blit(player_off, [player_x, player_y])
 
@@ -84,8 +77,9 @@ while game:
     # draw user sprite (lander)
     screen.blit(player_off, [player_x, player_y])
 
-    # teken de landings ground
+    # draw landings ground
     screen.blit(landings_ground, [0, 0])
+    
     # refresh the game window
     pygame.display.update()
     clock.tick(50)
